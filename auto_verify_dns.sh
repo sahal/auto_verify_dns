@@ -54,7 +54,7 @@ fi
 function show_help {
 cat << EOF
 Usage: ${0##*/:-} [OPTION...]
-A quick test to see if one (\$server) or more nameservers (\$dns) (IP/hostnames)
+A quick test to see if one (\$server) or more nameservers (\$dns)
 are able to resolve a particular \$domain within a set \$timeoutsec
 
    -l specify a non-default dns server list (Default: \$DIR/servers)
