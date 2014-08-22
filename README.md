@@ -6,8 +6,26 @@ $domain within a set $timeoutsec; This is a more robust version of
 https://gist.github.com/sahal/317bb8dca6719776e10f
 
 
+Changes
+=======
+
+
+ * added set -u which checks for unset variables
+ * switched from nslookup to dig as nslookup is depreciated (or so
+    they say)
+ * temporary files created in /tmp with mktemp that store RAW dig results
+ * added getopts support
+ * a bit more robust with tests
+
 Usage
 =====
+
+* If you’re using a fresh Debian install you’ll need to install dig,
+    which comes included with the dnsutils meta package [1]
+
+```
+# apt-get update && apt-get install dnsutils -y
+```
 
 ```
 $ ./auto_verify_dns.sh -h
@@ -50,3 +68,5 @@ Put it all together:
 ```
 $./auto)_verify_dns.sh -t 2 -l ~/dnsservers -d google.com
 ```
+
+1: https://packages.debian.org/stable/dnsutils
