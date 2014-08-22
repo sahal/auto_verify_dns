@@ -1,3 +1,9 @@
+from bash 4.0: https://ftp.gnu.org/gnu/bash/bash-4.0.tar.gz
+timeout3 was written by Dmitry V Golovashkin, distributed with bash 4.0 (see
+examples/scripts/), under GPL v3 (see COPYING)
+
+All other files are distributed under the MIT License as described below:
+
 Copyright (c) 2014 Sahal Ansari
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
