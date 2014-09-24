@@ -25,8 +25,7 @@ function main { #yeah, son; this is #HowToBeABashPro
 
 if [ ! -e "$timeout3" ]; then
 	echo "OOps, you don't have timeout3"
-	echo "Get it in the bash-4.0 source code: examples/scripts/timeout3"
-	exit 1
+	die "Get it in the bash-4.0 source code: examples/scripts/timeout3"
 fi
 
 echo "Domain to test against: ""$domain"
@@ -39,8 +38,7 @@ if [ -n "${server:-}" ]; then
 	checkdns "${server:-}"
 else
 	if [ ! -e "$dns" ]; then
-	   echo "OOps, Cannot find your list of DNS servers!?"
-	   exit 1
+	   die "OOps, Cannot find your list of DNS servers!?"
 	fi
 
 	echo "List of DNS servers: ""$dns"
@@ -49,6 +47,11 @@ else
 	breaklist
 fi
 
+}
+
+function die { #$1 = message
+	echo "$1"
+	exit 1
 }
 
 function show_help {
@@ -70,8 +73,7 @@ function checkopts {
 # TODO: check to see if valid options were given for each parameter
 	case "${1:-}" in
 	  \-*)
-	   echo "WARNING: syntax error, please try again!"
-	   exit 1
+	   die "WARNING: syntax error, please try again!"
 	;;
 	esac
 }
